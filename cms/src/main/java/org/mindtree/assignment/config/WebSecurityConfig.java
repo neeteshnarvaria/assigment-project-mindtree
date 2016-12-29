@@ -32,7 +32,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()
                 .antMatchers("/", "/home","/imageController/**",
-                        "/css/**","/js/**","/showBlog/**","/registration","/console/**").permitAll()
+                        "/css/**","/js/**","/showBlog/**","/registration","/console/**","/timeline/**").permitAll()
                 .antMatchers(HttpMethod.POST, "/addComments").permitAll()
                 .anyRequest().authenticated()
                 .and()
@@ -46,23 +46,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf().disable()
                 .headers().frameOptions().disable();;
     }
-
-    /*@Autowired
-    public void configAuthentication(AuthenticationManagerBuilder auth) throws Exception {
-
-        auth.jdbcAuthentication()
-                .usersByUsernameQuery(
-                        "select username,password, enabled from users where username=?")
-                .authoritiesByUsernameQuery(
-                        "select username, role from user_roles where username=?");
-    }*/
-
-    /*@Autowired
-    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        auth
-                .inMemoryAuthentication()
-                .withUser("user").password("password").roles("ADMIN");
-    }*/
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
