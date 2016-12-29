@@ -61,5 +61,5 @@ Junit
 Wrote Test cases with Junit4.
 
 
-To Run Application just use maven command “spring-boot:run” from directory where pom.xml exist.
+To Run Application just use maven command “mvn spring-boot:run” from directory where pom.xml exist.
 
